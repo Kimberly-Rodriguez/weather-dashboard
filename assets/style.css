@@ -1,0 +1,44 @@
+
+
+h1 {
+    color:rgb(9, 126, 250);
+}
+
+#search-btn {
+    background-color: rgb(9, 126, 250);
+    color:cornsilk;
+}
+
+#search-input {
+width: 80%!important;
+}
+
+.list-group  {   
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 4px 0 4px 0;
+    color: rgb(9, 126, 250);
+    font-size: 24px;
+    font-weight: bold;
+    left: -1px;
+    padding: 10px 7px 5px;
+    height:400px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+.list-group-item {
+    color:rgb(9, 126, 250);
+}
+
+h2, h3 {
+    color:seashell;
+}
+
+.card-title , .card-text-1 , .card-text-2, .card-text-3 {
+    color:rgb(9, 126, 250);
+}
+
+.p-5 {
+    padding: 1rem!important;
+}
