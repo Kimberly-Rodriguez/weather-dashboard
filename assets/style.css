@@ -2,11 +2,21 @@
 
 h1 {
     color:rgb(9, 126, 250);
+    background-color: rgba(179, 207, 223, 0.192);
 }
 
 #search-btn {
     background-color: rgb(9, 126, 250);
     color:cornsilk;
+}
+
+.nameDetails{
+ 
+    border-radius: 5%;
+    margin: 1em;
+    margin-right: 4em;
+    
+    
 }
 
 #search-input {
@@ -22,7 +32,7 @@ width: 80%!important;
     font-weight: bold;
     left: -1px;
     padding: 10px 7px 5px;
-    height:400px;
+    height:500px;
     overflow:scroll;
     overflow-x:hidden;
 }
@@ -31,14 +41,23 @@ width: 80%!important;
     color:rgb(9, 126, 250);
 }
 
-h2, h3 {
+h3 {
     color:seashell;
 }
 
 .card-title , .card-text-1 , .card-text-2, .card-text-3 {
     color:rgb(9, 126, 250);
+    
+}
+.card-body {
+    background-color: rgba(179, 207, 223, 0.192);
 }
 
 .p-5 {
     padding: 1rem!important;
+}
+
+#fivedayCard , h2 {
+    margin-left: 2em;
+    color:cornsilk;
 }
