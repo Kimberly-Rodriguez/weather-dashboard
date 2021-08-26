@@ -65,3 +65,11 @@ h3 {
 #search-input {
     width: 80%!important;
     }
+
+#append-info {
+    justify-content: space-evenly;
+}
+
+img {
+    max-width: fit-content;
+}
