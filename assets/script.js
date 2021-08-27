@@ -20,10 +20,7 @@ function allHistorySearch() {
     }
 };
 
-searchHistoryEl.text(searchHistoryArray);
-
 // Logging info in search bar
-
 
 
 function handleSearchFormSubmit(e) {
@@ -44,7 +41,49 @@ function handleSearchFormSubmit(e) {
     $('input[name="search-input"]').val('');
 
     localStorage.setItem("searchHistoryArray", JSON.stringify(searchHistoryArray));
+
+    searchForItem(lookForItem);
 }
+
+// 
+
+function searchForItem(location){
+
+    var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + location + '&appid=83bfd30adb45fad9c7a7ec2e50b6b625'
+
+fetch(weatherUrl).then(function (response) {
+    return response.json();
+})
+    .then(function (data) {
+        console.log(data);
+
+        var lat = data.city.coord.lat;
+        var lon = data.city.coord.lon;
+
+        console.log(lat);
+        console.log(lon);
+
+
+
+        var uvIndex = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=hourly,minutely&appid=83bfd30adb45fad9c7a7ec2e50b6b625'
+
+
+        fetch(weatherUrl).then(function (response) {
+            return response.json();
+        })
+            .then(function (data) {
+                console.log(data);
+            });
+
+
+        var queryString = './search-result.htm'
+        queryString.text(location);
+    })
+     
+};
+
+
+
 
 
 function handleRemoveItem(e) {
@@ -55,40 +94,6 @@ function handleRemoveItem(e) {
     btnClicked.parent('li');
 
 }
-
-
-// var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + lookForItem + '&appid=83bfd30adb45fad9c7a7ec2e50b6b625'
-
-// fetch(weatherUrl).then(function (response) {
-//     return response.json();
-// })
-//     .then(function (data) {
-//         console.log(data);
-
-//         var lat = data.city.coord.lat;
-//         var lon = data.city.coord.lon;
-
-//         console.log(lat);
-//         console.log(lon);
-
-
-
-//         var uvIndex = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=hourly,minutely&appid=83bfd30adb45fad9c7a7ec2e50b6b625'
-
-
-//         fetch(weatherUrl).then(function (response) {
-//             return response.json();
-//         })
-//             .then(function (data) {
-//                 console.log(data);
-//             });
-
-
-//         var queryString = './search-result.htm'
-//         queryString.text(lookForItem);
-//     })
-
-
 
 //when the user clicks on the search button the functioin heandleSearchSubmit runs
 searchByCityEl.on('submit', handleSearchFormSubmit)
