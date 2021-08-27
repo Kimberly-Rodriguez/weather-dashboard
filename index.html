@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Document</title>
 </head>
@@ -41,11 +42,11 @@
         <!-- Dashboard Display -->
 
         <div class="col-4 col-md-9 container-02" id="append-info">
-            <h3 class="col-12 nameDetails"> City Name: <span>Date</span></h3>
-            <h3 class="col-12 nameDetails"> Temp: </h3>
-            <h3 class="col-12 nameDetails"> Wind: </h3>
-            <h3 class="col-12 nameDetails"> Humidity: </h3>
-            <h3 class="col-12 nameDetails"> UV Index: </h3>
+            <h3 class="col-12 nameDetails" > City Name:<span id="cityName"> </span><span id="dateToday">Date</span></h3>
+            <h3 class="col-12 nameDetails" > Temp: <span id="temp"> </span></h3>
+            <h3 class="col-12 nameDetails" >  Wind: <span id="wind"> </span> </h3>
+            <h3 class="col-12 nameDetails" > Humidity: <span id="humidity"> </span> </h3>
+            <h3 class="col-12 nameDetails" > UV Index: <span id="uvIndex"> </span></h3>
 
             <h2 id="fivedayCard"> 5-Day Forecast: </h2>
             <div class="row">

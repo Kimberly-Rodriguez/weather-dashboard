@@ -1,5 +1,18 @@
 var searchByCityEl = $('#city-input-form');
 var searchHistoryEl = $('#city-list');
+var cityName = $('#cityName');
+var temp = $('#temp');
+var wind = $('#wind');
+var humidity =$('#humidity');
+var uvIndex = $('#uvIndex');
+var dateToday= $('#dateToday');
+var today = moment();
+
+
+console.log(today.format("MM,DD,YYYY"));
+
+
+
 
 
 
@@ -65,14 +78,32 @@ fetch(weatherUrl).then(function (response) {
 
 
 
-        var uvIndex = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=hourly,minutely&appid=83bfd30adb45fad9c7a7ec2e50b6b625'
+
+        var uvIndexUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=imperial&exclude=hourly,minutely&appid=83bfd30adb45fad9c7a7ec2e50b6b625'
 
 
-        fetch(weatherUrl).then(function (response) {
+        fetch(uvIndexUrl ).then(function (response) {
             return response.json();
         })
             .then(function (data) {
                 console.log(data);
+
+
+                temp.append(data.current.temp);
+                cityName.append(location);
+                wind.append(data.current.wind_speed);
+                humidity.append(data.current.humidity);
+                uvIndex.append(data.current.uvi);
+                dateToday.append(today.format("MM,DD,YYYY"));
+                
+
+
+                for (let i = 0; i < array.length; i++) {
+                    const element = array[i];
+                    
+                };
+
+
             });
 
 
