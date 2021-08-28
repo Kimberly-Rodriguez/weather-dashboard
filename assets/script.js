@@ -9,7 +9,7 @@ var dateToday= $('#dateToday');
 var today = moment();
 
 
-console.log(today.format("MM,DD,YYYY"));
+console.log(today.format('MMMM Do, YYYY'));
 
 
 
@@ -89,14 +89,15 @@ fetch(weatherUrl).then(function (response) {
                 console.log(data);
 
 
-                temp.append(data.current.temp);
-                cityName.append(location);
-                wind.append(data.current.wind_speed);
-                humidity.append(data.current.humidity);
-                uvIndex.append(data.current.uvi);
-                dateToday.append(today.format("MM,DD,YYYY"));
                 
-
+                cityName.text(location);
+                temp.text(data.current.temp);
+                wind.text(data.current.wind_speed);
+                humidity.text(data.current.humidity);
+                uvIndex.text(data.current.uvi);
+                dateToday.text(today.format('MMMM Do, YYYY'));
+                
+          //the weather icons
 
                 for (let i = 0; i < array.length; i++) {
                     const element = array[i];
