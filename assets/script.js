@@ -6,6 +6,7 @@ var wind = $("#wind");
 var humidity = $("#humidity");
 var uvIndex = $("#uvIndex");
 var dateToday = $("#dateToday");
+var uvIndex = $("#uvIndex");
 
 var today = moment();
 
@@ -62,6 +63,8 @@ function handleSearchFormSubmit(e) {
   searchForItem(lookForItem);
 }
 
+// NOTE: Main Dashboard Display of Weather information
+
 function searchForItem(location) {
   var weatherUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -88,7 +91,7 @@ function searchForItem(location) {
         lon +
         "&units=imperial&exclude=hourly,minutely&appid=83bfd30adb45fad9c7a7ec2e50b6b625";
 
-      fetch(uvIndexUrl)
+        fetch(uvIndexUrl)
         .then(function (response) {
           return response.json();
         })
@@ -102,9 +105,10 @@ function searchForItem(location) {
           uvIndex.text(data.current.uvi);
           dateToday.text(today.format("MMMM Do, YYYY"));
 
+       
+         
+      
           //the weather icons
-
-          
 
            for (let i = 1; i < 6; i++) {
              $("#date-card0" + i).text(moment.unix(data.daily[i].dt).format("MMMM Do, YYYY"));
@@ -113,17 +117,33 @@ function searchForItem(location) {
              $("#humi-card0" + i).text(data.daily[i].humidity);
 
           var iconCode = data.daily[i].weather[0].icon;
-          var iconUrl =  "https://api.openweathermap.org/data/2.5/onecall?lat=" + iconCode +  "&units=imperial&exclude=hourly,minutely&appid=83bfd30adb45fad9c7a7ec2e50b6b625";
-
-             $("#icon-card0" + i).attr('span',iconUrl);
+          
+          var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png"
+             $("#icon0" + i).attr('src',iconUrl);
              
-
            }
         });
+      });
+
+
+      // uvIndex color cordination
+      if (uvIndex < 3) {
+        document.getElementById("uvIndex").style.backgroundColor = '#D9ED92';
+        }
+        else  
+        if (uvIndex >=3 && uvIndex.value <=5)  
+        {
+          document.getElementById("uvIndex").style.backgroundColor = '#FEE440';
+        }  
+        else  
+        if (uvIndex >=6)  
+        {
+          document.getElementById("uvIndex").style.backgroundColor = '#E36414';
+        }
+     
 
      
-    });
-}
+    };
 
 function handleRemoveItem(e) {
   // convert button we pressed (`event.target`) to a jQuery DOM object
