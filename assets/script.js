@@ -7,6 +7,7 @@ var humidity = $("#humidity");
 var uvIndex = $("#uvIndex");
 var dateToday = $("#dateToday");
 var uvIndex = $("#uvIndex");
+var uvI;
 
 var today = moment();
 
@@ -105,6 +106,24 @@ function searchForItem(location) {
           uvIndex.text(data.current.uvi);
           dateToday.text(today.format("MMMM Do, YYYY"));
 
+          uvI = data.current.uvi;
+
+          console.log(uvI);
+
+      // uvIndex color cordination
+      if (uvI < 3) {
+        document.getElementById("uvIndex").style.color = '#D9ED92';
+        }
+        else  
+        if (uvI >=3 && uvI <=5)  
+        {
+          document.getElementById("uvIndex").style.color = '#FEE440';
+        }  
+        else  
+        if (uvI >=6)  
+        {
+          document.getElementById("uvIndex").style.color = '#E36414';
+        }
        
          
       
@@ -125,21 +144,7 @@ function searchForItem(location) {
         });
       });
 
-
-      // uvIndex color cordination
-      if (uvIndex < 3) {
-        document.getElementById("uvIndex").style.backgroundColor = '#D9ED92';
-        }
-        else  
-        if (uvIndex >=3 && uvIndex.value <=5)  
-        {
-          document.getElementById("uvIndex").style.backgroundColor = '#FEE440';
-        }  
-        else  
-        if (uvIndex >=6)  
-        {
-          document.getElementById("uvIndex").style.backgroundColor = '#E36414';
-        }
+ 
      
 
      
