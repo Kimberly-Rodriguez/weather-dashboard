@@ -1,92 +1,86 @@
 /* Key Elements */
 
 h1 {
-    color:rgb(9, 126, 250);
-    background-color: rgba(179, 207, 223, 0.192);
-    font-family: 'Montserrat', sans-serif;
+  color: rgb(9, 126, 250);
+  background-color: rgba(179, 207, 223, 0.192);
+  font-family: "Montserrat", sans-serif;
 }
 
 h3 {
-    color:seashell;
+  color: seashell;
 }
 
-
 /* Dashboard Info */
-.nameDetails{
-    border-radius: 5%;
-    margin: 1em;
-    margin-right: 4em;
+.nameDetails {
+  border-radius: 5%;
+  margin: 1em;
+  margin-right: 4em;
 }
 
 /* Side Bar */
-.list-group  {   
-    background-color: white;
-    border: 1px solid white;
-    border-radius: 4px 0 4px 0;
-    color: rgb(9, 126, 250);
-    font-size: 24px;
-    font-weight: bold;
-    left: -1px;
-    padding: 10px 7px 5px;
-    height:500px;
-    overflow:scroll;
-    overflow-x:hidden;
+.list-group {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 4px 0 4px 0;
+  color: rgb(9, 126, 250);
+  font-size: 24px;
+  font-weight: bold;
+  left: -1px;
+  padding: 10px 7px 5px;
+  height: 500px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .list-group-item {
-    color:rgb(9, 126, 250);
+  color: rgb(9, 126, 250);
 }
 
-
-
-.card-title , .card-text-1 , .card-text-2, .card-text-3 {
-    color:rgb(9, 126, 250);
-    
+.card-title,
+.card-text-1,
+.card-text-2,
+.card-text-3 {
+  color: rgb(9, 126, 250);
 }
-.card-body .container-02{
-    background-color: rgba(179, 207, 223, 0.192);
+.card-body .container-02 {
+  background-color: rgba(179, 207, 223, 0.192);
 }
 
 .p-5 {
-    padding: 1rem!important;
+  padding: 1rem !important;
 }
 
 /* The 5-Day Title */
 
-#fivedayCard , h2 {
-    margin-left: 1em;
-    color:cornsilk;
+#fivedayCard,
+h2 {
+  margin-left: 1em;
+  color: rgb(3, 52, 92);
 }
 #search-btn {
-    background-color: rgb(9, 126, 250);
-    color:cornsilk;
+  background-color: rgb(9, 126, 250);
+  color: cornsilk;
 }
 
 #search-input {
-    width: 80%!important;
-    }
+  width: 80% !important;
+}
 
 #append-info {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 img {
-    max-width: fit-content;
+  max-width: fit-content;
 }
 
 #space02 {
-    margin-right:1.25em;
-    display:inline-block;
+  margin-right: 1.25em;
+  display: inline-block;
 }
 
-#space01, #space03 {
-    margin-right: .25em;
-    display:inline-block;
-
+#space01,
+#space03 {
+  margin-right: 0.25em;
+  display: inline-block;
 }
-
-#city-list {
-
-border: (9, 126, 250);
-
-};

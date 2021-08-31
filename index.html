@@ -1,120 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <figure class="text-center">
-        <blockquote class="blockquote">
-            <p>
-            <h1><strong> Weather Dashboard </strong></h1>
-            </p>
-        </blockquote>
+      <blockquote class="blockquote">
+        <h1><strong> Weather Dashboard </strong></h1>
+      </blockquote>
     </figure>
     <div class="row align-center justify-center min-100-vh bg-primary">
-        <div class="col-12 col-md-3  bg-light p-5 ">
-            <h1 class="text-primary">Search for a City</h1>
-            <form id="city-input-form" class="form w-100">
-                <input id="search-input" class="form-input w-100" type="text" placeholder="City Name" name="search-input">
-                <br>
-                <br>
-                <button class="btn btn-info btn-block" id="search-btn">Search</button>
-            </form>
+      <div class="col-12 col-md-3 bg-light p-5">
+        <h1 class="text-primary">Search for a City</h1>
+        <form id="city-input-form" class="form w-100">
+          <input
+            id="search-input"
+            class="form-input w-100"
+            type="text"
+            placeholder="City Name"
+            name="search-input"
+          />
+          <br />
+          <br />
+          <button class="btn btn-info btn-block" id="search-btn">Search</button>
+        </form>
 
-            <div class="container-01" style="width: 18rem;">
-                <ul class="row m-0 justify-space-between align-center p-2 bg-light text-dark" id="city-list">
-                    
-                </ul>
-            </div>
+        <div class="container-01" style="width: 18rem">
+          <ul
+            class="
+              row
+              m-0
+              justify-space-between
+              align-center
+              p-2
+              bg-light
+              text-dark
+            "
+            id="city-list"
+          ></ul>
         </div>
-        <!-- Dashboard Display -->
+      </div>
 
-        <div class="col-4 col-md-9 container-02" id="append-info">
-            <h3 class="col-12 nameDetails" > City Name:<span id="space01"> </span><span id="cityName"></span><span id="space02"></span><span>Date:</span><span id="space03"></span><span id="dateToday"></span></h3>
-            <h3 class="col-12 nameDetails" > Temp: <span id="temp"></span></h3>
-            <h3 class="col-12 nameDetails" >  Wind: <span id="wind"></span></h3>
-            <h3 class="col-12 nameDetails" > Humidity: <span id="humidity"></span></h3>
-            <h3 class="col-12 nameDetails" > UV Index: <span id="uvIndex"></span></h3>
+      <!-- Dashboard Display -->
 
-            <h2 id="fivedayCard"> 5-Day Forecast: </h2>
-            <div class="row">
+      <div class="col-4 col-md-9 container-02" id="append-info">
+        <h3 class="col-12 nameDetails">
+          City Name:<span id="space01"> </span>
+          <span id="cityName"></span>
+          <span id="space02"></span>
+          <span>Date:</span>
+          <span id="space03"></span>
+          <span id="dateToday"></span>
+        </h3>
+        <h3 class="col-12 nameDetails">Temp: <span id="temp"></span></h3>
+        <h3 class="col-12 nameDetails">Wind: <span id="wind"></span></h3>
+        <h3 class="col-12 nameDetails">
+          Humidity: <span id="humidity"></span>
+        </h3>
+        <h3 class="col-12 nameDetails">UV Index: <span id="uvIndex"></span></h3>
+
+        <h2 id="fivedayCard">5-Day Forecast:</h2>
+        <div class="row"></div>
+        <!-- Card container -->
+
+        <div class="container-03">
+          <div class="card-group row">
+            <div class="card col-12 col-md-3">
+              <div class="card-body">
+                <h5 class="card-title" id="date-card">
+                  Date: <span id="date-card01"></span><span id="icon-card01"></span>
+                </h5>
+                <p class="card-text-1"> Temp: <span id="temp-card01">  </span></p>
+                <p class="card-text-2"> Wind: <span id="wind-card01">  </span></p>
+                <p class="card-text-3"> Humidity: <span id="humi-card01">  </span></p>
+              </div>
             </div>
-            <!-- Card container -->
-
-            <div class="container-03">
-                <div class="card-group row">
-                    <div class="card col-2">
-                        <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                            class="card-img-top" alt="a red cloud in the sky ">
-                        <div class="card-body">
-                            <h5 class="card-title" id="date-card">Date: <span> # </span></h5>
-                            <p class="card-text-1">Temp: <span> # </span></p>
-                            <p class="card-text-2">Wind: <span> # </span></p>
-                            <p class="card-text-3">Humidity: <span> # </span></p>
-                        </div>
-                    </div>
-                    <div class="card col-2">
-                        <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                            class="card-img-top" alt="a red cloud in the sky ">
-                        <div class="card-body">
-                            <h5 class="card-title"> Date: <span># </span> </h5>
-                            <p class="card-text-1">Temp: <span> # </span></p>
-                            <p class="card-text-2">Wind: <span> # </span></p>
-                            <p class="card-text-3">Humidity: <span> # </span></p>
-                        </div>
-                    </div>
-                    <div class="card col-2">
-                        <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                            class="card-img-top" alt="a red cloud in the sky ">
-                        <div class="card-body">
-                            <h5 class="card-title"> Date: <span># </span> </h5>
-                            <p class="card-text-1">Temp: <span> # </span></p>
-                            <p class="card-text-2">Wind: <span> # </span></p>
-                            <p class="card-text-3">Humidity: <span> # </span></p>
-                        </div>
-                    </div>
-                    <div class="card col-2">
-                        <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                            class="card-img-top" alt="a red cloud in the sky ">
-                        <div class="card-body">
-                            <h5 class="card-title"> Date: <span># </span> </h5>
-                            <p class="card-text-1">Temp: <span> # </span></p>
-                            <p class="card-text-2">Wind: <span> # </span></p>
-                            <p class="card-text-3">Humidity: <span> # </span></p>
-                        </div>
-                    </div>
-                    <div class="card col-2">
-                        <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                            class="card-img-top" alt="a red cloud in the sky ">
-                        <div class="card-body">
-                            <h5 class="card-title"> Date: <span># </span> </h5>
-                            <p class="card-text-1">Temp: <span> # </span></p>
-                            <p class="card-text-2">Wind: <span> # </span></p>
-                            <p class="card-text-3">Humidity: <span> # </span></p>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-                    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-                <script src="./assets/script.js"></script>
-
-
-</body>
-
+            <div class="card col-12 col-md-3">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Date: <span id="date-card02"></span><span id="icon-card02"></span>
+                </h5>
+                <p class="card-text-1"> Temp: <span id="temp-card02">  </span></p>
+                <p class="card-text-2"> Wind: <span id="wind-card02">  </span></p>
+                <p class="card-text-3"> Humidity: <span id="humi-card02">  </span></p>
+              </div>
+            </div>
+            <div class="card col-12 col-md-3">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Date: <span id="date-card03"> </span><span id="icon-card03"></span>
+                </h5>
+                <p class="card-text-1"> Temp: <span id="temp-card03">  </span></p>
+                <p class="card-text-2"> Wind: <span id="wind-card03">  </span></p>
+                <p class="card-text-3"> Humidity: <span id="humi-card03">  </span></p>
+              </div>
+            </div>
+            <div class="card col-12 col-md-3">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Date: <span id="date-card04"> </span><span id="icon-card04"></span>
+                </h5>
+                <p class="card-text-1"> Temp: <span id="temp-card04" >  </span></p>
+                <p class="card-text-2"> Wind: <span id="wind-card04">  </span></p>
+                <p class="card-text-3"> Humidity: <span id="humi-card04">  </span></p>
+              </div>
+            </div>
+            <div class="card col-12 col-md-3">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Date: <span id="date-card05">  </span><span id="icon-card05"></span>
+                </h5>
+                <p class="card-text-1"> Temp: <span id="temp-card05">  </span></p>
+                <p class="card-text-2"> Wind: <span id="wind-card05">  </span></p>
+                <p class="card-text-3"> Humidity: <span id="humi-card05">  </span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>
