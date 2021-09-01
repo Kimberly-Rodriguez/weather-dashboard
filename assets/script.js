@@ -16,10 +16,20 @@ console.log(today.format("MMMM Do, YYYY"));
 var searchHistoryArray =
   JSON.parse(localStorage.getItem("searchHistoryArray")) || [];
 
+
+  //it is passing on Los Angeles but now how do I append it to the page
+  let uniqueChars = [...new Set(searchHistoryArray)];
+
+  searchHistoryArray = uniqueChars;
+
+console.log(uniqueChars);
+allHistorySearch();
+
 //function for list know to got to the array
 
 function allHistorySearch() {
   //looping the array of cities
+searchHistoryEl.html("");
 
   for (let i = 0; i < searchHistoryArray.length; i++) {
     var cityHistoryEl = $("<button>");
@@ -33,6 +43,8 @@ function allHistorySearch() {
     searchHistoryEl.append(cityHistoryEl);
   }
 }
+
+
 function lastButtonClick() {
   searchForItem($(this).text())
 }
@@ -60,6 +72,18 @@ function handleSearchFormSubmit(e) {
     "searchHistoryArray",
     JSON.stringify(searchHistoryArray)
   );
+
+  searchHistoryArray =
+  JSON.parse(localStorage.getItem("searchHistoryArray")) || [];
+
+
+  //it is passing on Los Angeles but now how do I append it to the page
+  let uniqueChars = [...new Set(searchHistoryArray)];
+
+  searchHistoryArray = uniqueChars;
+
+console.log(uniqueChars);
+allHistorySearch();
 
   searchForItem(lookForItem);
 }
