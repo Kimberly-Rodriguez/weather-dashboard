@@ -45,7 +45,7 @@ The following image shows the web application's appearance and functionality:
 
 ## Tools
 
-* This project was built using HTML and CSS principles. As well as, usage of the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve weather data for cities. 
+* This project was built using HTML, CSS and JavaScript principles. As well as, usage of the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve weather data for cities. 
 
 * This project used `localStorage` to store any persistent data. 
 
