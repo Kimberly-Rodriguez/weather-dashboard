@@ -15,7 +15,7 @@
 This application can be useful to many, particularly travelers who want to see the weather outlook for multiple cities in order to plan ahead.  
 
 
-## Instalation
+## Installation
 
 For installation and deployment, please [click here](https://kimberly-rodriguez.github.io/Kimberlys_Protfolio/). The GitHub link is [here](https://github.com/Kimberly-Rodriguez/Kimberlys_Protfolio).
 
